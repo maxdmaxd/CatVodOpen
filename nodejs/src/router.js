@@ -7,10 +7,12 @@ import copymanga from './spider/book/copymanga.js';
 import ffm3u8 from './spider/video/ffm3u8.js';
 
 import douban from './spider/video/douban.js';
+import bili from './spider/video/bili.js';
+import baipiao from './spider/video/baipiaoys.js';
 
 
 
-const spiders = [douban,kunyu77, kkys, ffm3u8, push, alist, _13bqg, copymanga];
+const spiders = [douban,ffm3u8, push, alist, _13bqg, copymanga];
 const spiderPrefix = '/spider';
 
 /**
