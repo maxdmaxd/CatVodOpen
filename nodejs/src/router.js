@@ -11,7 +11,7 @@ import baipiao from './spider/video/baipiaoys.js';
 
 
 
-const spiders = [douban,bili,baipiao,ffm3u8, push, alist, _13bqg, copymanga];
+const spiders = [douban,bili,baipiao,push, alist, _13bqg];
 const spiderPrefix = '/spider';
 
 /**
