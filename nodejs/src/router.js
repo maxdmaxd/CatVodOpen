@@ -6,12 +6,16 @@ import _13bqg from './spider/book/13bqg.js';
 import douban from './spider/video/douban.js';
 import live from './spider/video/liveb.js';
 import bili from './spider/video/bili.js';
-
+import pansearch from './spider/video/pansearch.js';
+import upyun from './spider/video/upyun.js';
+import wogg from './spider/video/wogg.js';
+import yingso from './spider/video/yingso.js';
+import netflav from './spider/video/netflav.js';
 import baipiao from './spider/video/baipiaoys.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,push, alist, _13bqg];
+const spiders = [douban,live,bili,baipiao,netflav,wogg,yingso,upyun,pansearch,push, alist, _13bqg];
 const spiderPrefix = '/spider';
 
 /**
