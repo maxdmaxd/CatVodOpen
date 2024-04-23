@@ -3,13 +3,7 @@ export default {
         categories: "经典无损音乐合集#帕梅拉#太极拳#健身#舞蹈#音乐#歌曲#MV4K#演唱会4K#白噪音4K#知名UP主#说案#解说#演讲#时事#探索发现超清#纪录片超清#沙雕动画#沙雕穿越#沙雕#平面设计教学#软件教程#实用教程#旅游#风景4K#食谱#美食超清#搞笑#球星#动物世界超清#相声小品#戏曲#儿童#小姐姐4K#热门#旅行探险",
         cookie: "填入bili cookie"
     },
-  live: {
-    contents: "https://gitee.com/galnt/cctv/raw/master/contents.txt",
-    url: [
-      { name: "范明明 ", url: "https://live.fanmingming.com/tv/m3u/ipv6.m3u" }
-      
-    ]
-  },
+
     ffm3u8: {
         url: 'https://cj.ffzyapi.com/api.php/provide/vod/',
         categories: ['国产剧', '香港剧', '韩国剧', '欧美剧', '台湾剧', '日本剧', '海外剧', '泰国剧', '短剧', '动作片', '喜剧片', '爱情片', '科幻片', '恐怖片', '剧情片', '战争片', '动漫片', '大陆综艺', '港台综艺', '日韩综艺', '欧美综艺', '国产动漫', '日韩动漫', '欧美动漫', '港台动漫', '海外动漫', '记录片'],
