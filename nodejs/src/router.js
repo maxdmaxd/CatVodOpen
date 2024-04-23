@@ -12,10 +12,11 @@ import wogg from './spider/video/wogg.js';
 import yingso from './spider/video/yingso.js';
 import meijumi from './spider/video/meijumi.js';
 import baipiao from './spider/video/baipiaoys.js';
+import xxpan from './spider/video/xxpan.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,meijumi,wogg,yingso,upyun,pansearch,push, alist, _13bqg];
+const spiders = [douban,live,bili,baipiao,meijumi,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg];
 const spiderPrefix = '/spider';
 
 /**
