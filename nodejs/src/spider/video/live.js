@@ -1,5 +1,5 @@
 import req from '../../util/req.js';
-import _ from 'lodash';
+import pkg from 'lodash';
 const { _ } = pkg;
 import { MAC_UA } from '../../util/misc.js';
 
