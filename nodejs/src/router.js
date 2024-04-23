@@ -10,7 +10,7 @@ import bengou from './spider/book/bengou.js';
 import baozimh from './spider/book/baozimh.js';
 import bookan from './spider/book/bookan.js';
 
-import wenku from './spider/book/wenku.js';
+ 
 
 import push from './spider/video/push.js';
 import douban from './spider/video/douban.js';
@@ -27,7 +27,7 @@ import xxpan from './spider/video/xxpan.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,meijumi,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan,wenku];
+const spiders = [douban,live,bili,baipiao,meijumi,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
