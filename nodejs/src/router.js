@@ -8,9 +8,9 @@ import ffm3u8 from './spider/video/ffm3u8.js';
 import live from './spider/video/live.js';
 import douban from './spider/video/douban.js';
 import bili from './spider/video/bili.js';
-import baipiao from './spider/video/baipiaoys.js';
+import baipiaoys from './spider/video/baipiaoys.js';
 
-const spiders = [douban,live,bili,baipiao,kunyu77, kkys, ffm3u8, push, alist, _13bqg, copymanga];
+const spiders = [douban,live,bili,baipiaoys,kunyu77, kkys, ffm3u8, push, alist, _13bqg, copymanga];
 const spiderPrefix = '/spider';
 
 /**
