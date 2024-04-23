@@ -3,6 +3,11 @@
 import push from './spider/video/push.js';
 import alist from './spider/pan/alist.js';
 import _13bqg from './spider/book/13bqg.js';
+import coco from './spider/book/coco.js';
+import copymanga from './spider/book/copymanga.js';
+import laobaigs from './spider/book/laobaigs.js';
+
+
 import douban from './spider/video/douban.js';
 import live from './spider/video/liveb.js';
 import bili from './spider/video/bili.js';
