@@ -4,14 +4,14 @@ import push from './spider/video/push.js';
 import alist from './spider/pan/alist.js';
 import _13bqg from './spider/book/13bqg.js';
 import douban from './spider/video/douban.js';
-
+import live from './spider/video/liveb.js';
 import bili from './spider/video/bili.js';
 
 import baipiao from './spider/video/baipiaoys.js';
 
 
 
-const spiders = [douban,bili,baipiao,push, alist, _13bqg];
+const spiders = [douban,live,bili,baipiao,push, alist, _13bqg];
 const spiderPrefix = '/spider';
 
 /**
