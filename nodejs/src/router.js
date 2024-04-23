@@ -10,12 +10,12 @@ import pansearch from './spider/video/pansearch.js';
 import upyun from './spider/video/upyun.js';
 import wogg from './spider/video/wogg.js';
 import yingso from './spider/video/yingso.js';
-import netflav from './spider/video/netflav.js';
+
 import baipiao from './spider/video/baipiaoys.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,netflav,wogg,yingso,upyun,pansearch,push, alist, _13bqg];
+const spiders = [douban,live,bili,baipiao,wogg,yingso,upyun,pansearch,push, alist, _13bqg];
 const spiderPrefix = '/spider';
 
 /**
