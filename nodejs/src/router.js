@@ -1,13 +1,18 @@
  
  
-import push from './spider/video/push.js';
+
 import alist from './spider/pan/alist.js';
 import _13bqg from './spider/book/13bqg.js';
 import coco from './spider/book/coco.js';
 import copymanga from './spider/book/copymanga.js';
 import laobaigs from './spider/book/laobaigs.js';
+import bengou from './spider/book/bengou.js';
+import baozimh from './spider/book/baozimh.js';
+import bookan from './spider/book/bookan.js';
+import tewx from './spider/book/tewx.js';
+import wenku from './spider/book/wenku.js';
 
-
+import push from './spider/video/push.js';
 import douban from './spider/video/douban.js';
 import live from './spider/video/liveb.js';
 import bili from './spider/video/bili.js';
@@ -23,7 +28,7 @@ import xxpan from './spider/video/xxpan.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,meijumi,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg];
+const spiders = [douban,live,bili,baipiao,meijumi,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg,coco,copymanga,laobaigs,bengou,baozimh,bookan,tewx,wenku];
 const spiderPrefix = '/spider';
 
 /**
