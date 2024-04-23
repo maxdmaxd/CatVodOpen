@@ -12,13 +12,13 @@ import wogg from './spider/video/wogg.js';
 import yingso from './spider/video/yingso.js';
 import meijumi from './spider/video/meijumi.js';
 import vcm3u8 from './spider/video/vcm3u8.js';
-import ffm3u8 from './spider/video/ffm3u8.js';
+
 import baipiao from './spider/video/baipiaoys.js';
 import xxpan from './spider/video/xxpan.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,meijumi,wogg,xxpan,yingso,upyun,pansearch,ffm3u8,vcm3u8,push, alist, _13bqg];
+const spiders = [douban,live,bili,baipiao,meijumi,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg];
 const spiderPrefix = '/spider';
 
 /**
