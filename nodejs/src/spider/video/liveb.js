@@ -156,7 +156,7 @@ async function init(inReq, _outRes) {
     let exts = inReq.server.config.live.url;
     linkArray.clear
     var i = 0;
-    let group = '非分组'
+    let group = '全部频道'
     let assort = '';
     let index = '';
 
@@ -181,7 +181,7 @@ async function init(inReq, _outRes) {
                     let data = vk.value.data;
                     if (vk.value.url === assort) {
                         // 
-                        let group = '非分组'
+                        let group = '全部频道'
                         groups[group] = group;
                         if (_.isEmpty(channels[group])) {
                             channels[group] = {};
@@ -247,11 +247,25 @@ async function init(inReq, _outRes) {
 let classes = [];
 let filterObj = {};
 
+
 async function home(inReq, _outResp) {
+    let nonGroupedClass; // 用于存储全部频道的变量
+
     for(var key in groups) {
-        let oneCls = {'type_id': key, 'type_name': groups[key]};
-        classes.push(oneCls);
+        if(key === '全部频道') {
+            // 暂时存储全部频道
+            nonGroupedClass = {'type_id': key, 'type_name': groups[key]};
+        } else {
+            let oneCls = {'type_id': key, 'type_name': groups[key]};
+            classes.push(oneCls);
+        }
     }
+
+    if(nonGroupedClass) {
+        // 将全部频道添加到classes数组的末尾
+        classes.push(nonGroupedClass);
+    }
+
     return({
         class: _.map(classes, (cls) => {
             cls.land = 1.5;
@@ -261,6 +275,10 @@ async function home(inReq, _outResp) {
         filters: filterObj,
     });
 }
+
+
+
+
 
 async function category(inReq, _outResp) {
     const tid = inReq.body.id;
