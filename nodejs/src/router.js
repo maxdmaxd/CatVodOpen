@@ -24,11 +24,11 @@ import meijumi from './spider/video/meijumi.js';
 import vcm3u8 from './spider/video/vcm3u8.js';
 import baipiao from './spider/video/baipiaoys.js';
 import xxpan from './spider/video/xxpan.js';
-import wf from './spider/video/wf.js';
 
 
 
-const spiders = [douban,live,bili,baipiao,meijumi,wf,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
+
+const spiders = [douban,live,bili,baipiao,meijumi,vcm3u8,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
