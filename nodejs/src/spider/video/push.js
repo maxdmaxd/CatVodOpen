@@ -1,31 +1,13 @@
 import req from '../../util/req.js';
+import { load } from 'cheerio';
+import { ua, init ,detail0 ,proxy ,play } from '../../util/pan.js';
+import CryptoJS from 'crypto-js';
+import dayjs from 'dayjs';
 
-async function init(_inReq, _outResp) {
-    return {};
-}
 
-async function support(_inReq, _outResp) {
+async function support(inReq, _outResp) {
     // const clip = inReq.body.clip;
     return 'true';
-}
-
-async function detail(inReq, _outResp) {
-    const ids = !Array.isArray(inReq.body.id) ? [inReq.body.id] : inReq.body.id;
-    const videos = [];
-    for (const id of ids) {
-        let vod = {
-            vod_id: id,
-            vod_content: '',
-            vod_name: id,
-            vod_pic: 'https://pic.rmb.bdstatic.com/bjh/1d0b02d0f57f0a42201f92caba5107ed.jpeg',
-        };
-        vod.vod_play_from = '推送';
-        vod.vod_play_url = '测试$' + id;
-        videos.push(vod);
-    }
-    return {
-        list: videos,
-    };
 }
 
 async function sniff(inReq, outResp) {
@@ -68,17 +50,42 @@ async function sniff(inReq, outResp) {
     return '';
 }
 
-async function play(inReq, _outResp) {
-    // const flag = inReq.body.flag;
-    const id = inReq.body.id;
-    if (id.startsWith('https://v.nmvod.cn/vod-play')) {
+async function detail(inReq, _outResp) {
+    const ids = !Array.isArray(inReq.body.id) ? [inReq.body.id] : inReq.body.id;
+    let shareUrls = ids;
+    const videos = [];
+    const regex = new RegExp('/s/');
+    for (const id of ids) {
+    let vod = {
+            vod_id: id,
+            vod_content: id,
+            vod_name: '推送',
+            vod_pic: 'https://pic.rmb.bdstatic.com/bjh/1d0b02d0f57f0a42201f92caba5107ed.jpeg',
+        };
+    if(!regex.test(id)){
+        vod.vod_play_from = '推送';
+        vod.vod_play_url = '测试$' + id;
+        videos.push(vod);
+    }
+    else{
+        videos.push(await detail0(shareUrls ,vod));
+        }
+    }
+    return {
+        list: videos,
+    };
+}
+
+async function play0(inReq, outResp){
+        await play(inReq, outResp);
+        const id = inReq.body.id;
+        if (id.startsWith('https://m.nmddd.com/vod-play')) {
         const sniffer = await inReq.server.messageToDart({
             action: 'sniff',
             opt: {
                 ua: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
                 url: id,
                 timeout: 10000,
-                // rule and intercept parameters conflict, only one can be used
                 // rule: 'xxxxxxx'
                 intercept: inReq.server.address().url + inReq.server.prefix + '/sniff',
             },
@@ -91,8 +98,8 @@ async function play(inReq, _outResp) {
         }
     }
     return {
-        parse: 0,
-        url: id,
+            parse: 0,
+            url: id,
     };
 }
 
@@ -129,6 +136,8 @@ async function test(inReq, outResp) {
     }
 }
 
+
+
 export default {
     meta: {
         key: 'push',
@@ -138,9 +147,10 @@ export default {
     api: async (fastify) => {
         fastify.post('/init', init);
         fastify.post('/support', support);
-        fastify.post('/detail', detail);
-        fastify.post('/play', play);
         fastify.post('/sniff', sniff);
+        fastify.post('/detail', detail);
+        fastify.post('/play', play0);
+        fastify.get('/proxy/:site/:what/:flag/:shareId/:fileId/:end', proxy);
         fastify.get('/test', test);
     },
 };
