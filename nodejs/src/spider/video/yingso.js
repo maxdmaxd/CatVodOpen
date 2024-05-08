@@ -12,8 +12,8 @@ import CryptoJS from 'crypto-js';
 
 let aliUrl = 'https://www.aliyundrive.com/s/';
 let quarkUrl = 'https://pan.quark.cn/s/';
-let host = 'https://yingso.fun';
-let url = host + ':3001/v3';
+let host = 'https://ys.api.yingso.fun';
+let url = host + '/v3';
 
 async function request(reqUrl, data) {
     const res = await req(reqUrl, {
@@ -419,7 +419,7 @@ async function test(inReq, outResp) {
 export default {
     meta: {
         key: 'yingso',
-        name: '🎬️影搜网盘🎬',
+        name: '影搜云搜',
         type: 3,
     },
 api: async (fastify) => {
