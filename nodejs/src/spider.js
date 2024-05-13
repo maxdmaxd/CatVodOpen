@@ -1,13 +1,13 @@
 // import {_,} from "../lib/cat.js"
 // import * as _ from 'lodash';
-import * as Ali from '../util/ali.js';
-import * as Quark from '../util/quark.js';
+import * as Ali from './util/ali.js';
+import * as Quark from './util/quark.js';
 import * as HLS from 'hls-parser';
-import { MAC_UA, formatPlayUrl } from '../util/misc.js';
+import { MAC_UA, formatPlayUrl } from './util/misc.js';
 import dayjs from 'dayjs';
 
 import CryptoJS from 'crypto-js';
-import req from '../util/req.js';
+import req from './util/req.js';
 import pkg from 'lodash';
 const { _ } = pkg;
 
