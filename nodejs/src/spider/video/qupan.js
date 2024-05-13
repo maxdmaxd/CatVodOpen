@@ -87,7 +87,7 @@ async function search(inReq, _outResp) {
 export default {
     meta: {
         key: 'qupan',
-        name: '趣盘盘搜',
+        name: '🎻趣盘搜🎻',
         type: 3,
     },
     api: async(fastify) => {
