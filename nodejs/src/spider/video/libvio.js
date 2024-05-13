@@ -1,5 +1,5 @@
 // 自动从 地址发布页 获取&跳转url地址
-import { Spider } from "../spider.js";
+import { Spider } from "../../spider.js";
 import req from '../../util/req.js';
 
 import { load } from 'cheerio';
