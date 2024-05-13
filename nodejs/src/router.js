@@ -19,13 +19,14 @@ import bili from './spider/video/bili.js';
 import pansearch from './spider/video/pansearch.js';
 import upyun from './spider/video/upyun.js';
 import wogg from './spider/video/wogg.js';
+import qupan from './spider/video/qupan.js';
 import yingso from './spider/video/yingso.js';
 import meijumi from './spider/video/meijumi.js';
 import vcm3u8 from './spider/video/vcm3u8.js';
 import xxpan from './spider/video/xxpan.js';
  
  
-const spiders = [douban,live,bili,wogg,xxpan,yingso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,xxpan,yingso,qupan,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
