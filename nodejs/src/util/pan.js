@@ -6,6 +6,8 @@ import * as Quark from './quark.js';
 import dayjs from 'dayjs';
 
 export const ua = MAC_UA;
+export const Qpic = 'https://pic.imgdb.cn/item/663c5d2d0ea9cb1403060d86.png';
+export const Apic = 'https://inews.gtimg.com/newsapp_bt/0/13263837859/1000';
 
 function conversion(bytes){
   let mb = bytes / (1024 * 1024);
@@ -35,6 +37,7 @@ export async function init(inReq, _outResp) {
 }
 
 export async function detail0(shareUrls ,vod) {
+        shareUrls = !Array.isArray(shareUrls) ? [shareUrls] : shareUrls;
         const froms = [];
         const urls = [];
         for (const shareUrl of shareUrls) {
@@ -265,11 +268,6 @@ export async function play(inReq, _outResp) {
 
 export async function test(inReq, outResp) {
     try {
-        const printErr = function (json) {
-            if (json.statusCode && json.statusCode == 500) {
-                console.error(json);
-            }
-        };
         const prefix = inReq.server.prefix;
         const dataResult = {};
         let resp = await inReq.server.inject().post(`${prefix}/init`);
@@ -278,54 +276,89 @@ export async function test(inReq, outResp) {
         resp = await inReq.server.inject().post(`${prefix}/home`);
         dataResult.home = resp.json();
         printErr(resp.json());
-        if (dataResult.home.class.length > 0) {
-            resp = await inReq.server.inject().post(`${prefix}/category`).payload({
-                id: dataResult.home.class[0].type_id,
-                page: 1,
-                filter: true,
-                filters: {},
-            });
-            dataResult.category = resp.json();
-            printErr(resp.json());
-            if (dataResult.category.list.length > 0) {
-                resp = await inReq.server.inject().post(`${prefix}/detail`).payload({
-                    id: dataResult.category.list[0].book_id, // dataResult.category.list.map((v) => v.vod_id),
-                });
-                dataResult.detail = resp.json();
-                printErr(resp.json());
-                if (dataResult.detail.list && dataResult.detail.list.length > 0) {
-                    dataResult.play = [];
-                    for (const book of dataResult.detail.list) {
-                        const flags = book.volumes.split('$$$');
-                        const ids = book.urls.split('$$$');
-                        for (let j = 0; j < flags.length; j++) {
-                            const flag = flags[j];
-                            const urls = ids[j].split('#');
-                            for (let i = 0; i < urls.length && i < 2; i++) {
-                                resp = await inReq.server
-                                    .inject()
-                                    .post(`${prefix}/play`)
-                                    .payload({
-                                        flag: flag,
-                                        id: urls[i].split('$')[1],
-                                    });
-                                dataResult.play.push(resp.json());
+        let detailCalled = false;
+        if (dataResult.home.class && dataResult.home.class.length > 0) {
+            const typeId = dataResult.home.class[0].type_id;
+            let filters = {};
+            if (dataResult.home.filters) {
+                let filter = dataResult.home.filters[typeId];
+                if (filter) {
+                    for (const filterCfg of filter) {
+                        const initValue = filterCfg.init;
+                        if (!initValue) continue;
+                        for (const value of filterCfg.value) {
+                            if (value.v == initValue) {
+                                filters[filterCfg.key] = initValue;
+                                break;
                             }
                         }
                     }
                 }
             }
+            resp = await inReq.server.inject().post(`${prefix}/category`).payload({
+                id: typeId,
+                page: 1,
+                filter: true,
+                filters: filters,
+            });
+            dataResult.category = resp.json();
+            printErr(resp.json());
+            if (dataResult.category.list.length > 0) {
+                detailCalled = true;
+                const vodId = dataResult.category.list[0].vod_id;
+                await detailTest(inReq, vodId, dataResult);
+            }
         }
         resp = await inReq.server.inject().post(`${prefix}/search`).payload({
-            wd: '科技',
+            wd: '人',
             page: 1,
         });
         dataResult.search = resp.json();
+        if (!detailCalled && dataResult.search.list.length > 0) {
+            const vodId = dataResult.search.list[0].vod_id;
+            await detailTest(inReq, vodId, dataResult);
+        }
         printErr(resp.json());
         return dataResult;
     } catch (err) {
         console.error(err);
         outResp.code(500);
         return { err: err.message, tip: 'check debug console output' };
+    }
+}
+
+async function detailTest(inReq, vodId, dataResult) {
+    const prefix = inReq.server.prefix;
+    let resp = await inReq.server.inject().post(`${prefix}/detail`).payload({
+        id: vodId,
+    });
+    dataResult.detail = resp.json();
+    printErr(resp.json());
+    if (dataResult.detail.list && dataResult.detail.list.length > 0) {
+        dataResult.play = [];
+        for (const vod of dataResult.detail.list) {
+            const flags = vod.vod_play_from.split('$$$');
+            const ids = vod.vod_play_url.split('$$$');
+            for (let j = 0; j < flags.length; j++) {
+                const flag = flags[j];
+                const urls = ids[j].split('#');
+                for (let i = 0; i < urls.length && i < 2; i++) {
+                    resp = await inReq.server
+                        .inject()
+                        .post(`${prefix}/play`)
+                        .payload({
+                            flag: flag,
+                            id: urls[i].split('$')[1],
+                        });
+                    dataResult.play.push(resp.json());
+                }
+            }
+        }
+    }
+}
+
+function printErr(json) {
+    if (json.statusCode && json.statusCode == 500) {
+        console.error(json);
     }
 }
