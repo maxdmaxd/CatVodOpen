@@ -67,7 +67,7 @@ async function search(inReq, _outResp) {
         return {
             vod_id: item.attribs.href,
             vod_name: title,
-            vod_pic: Apic,
+            vod_pic: Qpic,
         };
     }).get();
     const pageCount = $('van-pagination').attr('page-count') || pg;
@@ -84,7 +84,7 @@ async function search(inReq, _outResp) {
 export default {
     meta: {
         key: 'aipan',
-        name: '爱盘云搜',
+        name: '🥰夸克爱搜🥰',
         type: 3,
     },
     api: async (fastify) => {
