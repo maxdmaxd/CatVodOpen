@@ -1,6 +1,6 @@
 import req from '../../util/req.js';
 import { load } from 'cheerio';
-import {  ua, init ,detail0 ,proxy ,play ,test ,isEmpty } from '../../util/pan.js';
+import { Apic, Qpic, ua, init ,detail0 ,proxy ,play ,test ,isEmpty } from '../../util/pan.js';
 import dayjs from 'dayjs';
 
 let siteUrl = 'https://www.aipanso.com';
@@ -67,7 +67,7 @@ async function search(inReq, _outResp) {
         return {
             vod_id: item.attribs.href,
             vod_name: title,
-             
+            vod_pic: Apic,
         };
     }).get();
     const pageCount = $('van-pagination').attr('page-count') || pg;
@@ -84,7 +84,7 @@ async function search(inReq, _outResp) {
 export default {
     meta: {
         key: 'aipan',
-        name: '🥰夸克爱搜🥰',
+        name: '爱盘云搜',
         type: 3,
     },
     api: async (fastify) => {
