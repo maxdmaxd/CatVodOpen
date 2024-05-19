@@ -24,9 +24,10 @@ import libvio from './spider/video/libvio.js';
 import vcm3u8 from './spider/video/vcm3u8.js';
 import xxpan from './spider/video/xxpan.js';
 import aipan from './spider/video/aipan.js';
+import qkpanso from './spider/video/qkpanso.js';
  
  
-const spiders = [douban,live,bili,libvio,wogg,xxpan,yingso,qupan,aipan,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,libvio,wogg,xxpan,yingso,qupan,aipan,qkpanso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
