@@ -27,7 +27,7 @@ import aipan from './spider/video/aipan.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
-const spiders = [douban,live,bili,libvio,wogg,xxpan,yingso,qupan,aipan,qkpanso,upyun,pansearch,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,xxpan,yingso,qupan,push, alist, _13bqg,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
