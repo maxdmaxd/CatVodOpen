@@ -5,7 +5,7 @@ import axios from "axios";
 
 let url = 'https://www.cfkj86.com';
 
-const uniqueId = CryptoJS.lib.WordArray.random(16).toString();
+const uniqueId = 'id5989867';
 
 
 async function init(inReq, _outResp) {
