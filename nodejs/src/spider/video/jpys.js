@@ -1,7 +1,7 @@
 import {load} from 'cheerio';
 import CryptoJS from 'crypto-js';
 import axios from "axios";
-#import { v4 as uuidv4 } from 'uuid';
+ 
 
 let url = 'https://www.cfkj86.com';
 
