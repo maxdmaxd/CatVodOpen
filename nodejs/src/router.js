@@ -20,11 +20,11 @@ import wogg from './spider/video/wogg.js';
 import qupan from './spider/video/qupan.js';
 
  
- 
+ import jpys from './spider/video/jpys.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
-const spiders = [douban,live,bili,wogg,qupan,push,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,qupan,jpys,push,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
