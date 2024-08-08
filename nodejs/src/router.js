@@ -14,7 +14,7 @@ import push from './spider/video/push.js';
 import douban from './spider/video/douban.js';
 import live from './spider/video/liveb.js';
 import bili from './spider/video/bili.js';
-import pansearch from './spider/video/pansearch.js';
+
 import upyun from './spider/video/upyun.js';
 import wogg from './spider/video/wogg.js';
 import qupan from './spider/video/qupan.js';
