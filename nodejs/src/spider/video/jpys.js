@@ -1,12 +1,10 @@
 import {load} from 'cheerio';
 import CryptoJS from 'crypto-js';
 import axios from "axios";
- 
+
 
 let url = 'https://www.cfkj86.com';
-
 const uniqueId = 'id5989867';
-
 
 async function init(inReq, _outResp) {
     return {};
@@ -90,8 +88,8 @@ async function detail(inReq, _outResp) {
         const a = $(it).find('a')[0]
         temp.push(a.children[0].data+'$'+a.attribs.href)
     }
-    playFroms.push('不知道倾情打造');
-    vod.vod_name='不知道带你看美女啦!'
+    playFroms.push('金牌默认线路');
+    vod.vod_name='金牌影视!'
     playUrls.push(temp.join('#'));
     vod.vod_play_from = playFroms.join('$$$');
     vod.vod_play_url = playUrls.join('$$$');
