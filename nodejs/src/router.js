@@ -22,14 +22,14 @@ import qupan from './spider/video/qupan.js';
  
 import czzy from './spider/video/czzy.js';
   
-
+import kkys from './spider/video/kkys.js';
 
 
  import jpys from './spider/video/jpys.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
-const spiders = [douban,live,bili,wogg,qupan,czzy, push,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,qupan,czzy, kkys,push,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
