@@ -19,12 +19,20 @@ import upyun from './spider/video/upyun.js';
 import wogg from './spider/video/wogg.js';
 import qupan from './spider/video/qupan.js';
 
- 
+ import tudou from './spider/video/tudou.js';
+
+import xxpan from './spider/video/xxpan.js';
+
+import yingso from './spider/video/yingso.js';
+
+import ttian from './spider/video/ttian.js';
+
+
  import jpys from './spider/video/jpys.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
-const spiders = [douban,live,bili,wogg,qupan,jpys, push,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,qupan,jpys,tudou,yingso,xxpan,ttian, push,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
