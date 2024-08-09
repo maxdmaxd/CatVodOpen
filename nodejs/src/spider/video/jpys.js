@@ -218,7 +218,7 @@ async function test(inReq, outResp) {
 
 export default {
     meta: {
-        key: 'jinpai',
+        key: 'jpys',
         name: '🥇金牌影视🥇',
         type: 3,
     },
