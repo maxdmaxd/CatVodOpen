@@ -2,7 +2,7 @@ import {load} from 'cheerio';
 import CryptoJS from 'crypto-js';
 import axios from "axios";
  
-
+const { v4: uuidv4 } = require('uuid');
 let url = 'https://www.cfkj86.com';
 
  
@@ -113,7 +113,7 @@ async function play(inReq, _outResp) {
     const html = await request(relurl, {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': Math.random().toString(36).substr(2, 9),
+    'deviceId': uuidv4(),
     'sign': key,
     't': t
     })
@@ -134,7 +134,7 @@ async function search(inReq, _outResp) {
     let html = await request(`${url}/api/mw-movie/anonymous/video/searchByWordPageable?keyword=${wd}&pageNum=${pg}&pageSize=12&type=false`,{
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': Math.random().toString(36).substr(2, 9),
+    'deviceId': uuidv4(),
     'sign': key,
     't': t
     });
