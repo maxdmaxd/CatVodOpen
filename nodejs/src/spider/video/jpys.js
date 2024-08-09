@@ -1,8 +1,8 @@
 import {load} from 'cheerio';
 import CryptoJS from 'crypto-js';
 import axios from "axios";
- 
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
+
 let url = 'https://www.cfkj86.com';
 
  
