@@ -20,7 +20,7 @@ import wogg from './spider/video/wogg.js';
 import qupan from './spider/video/qupan.js';
 
 import kkys from './spider/video/kkys.js';
-import jinpai from './spider/video/jinpai.js';
+import jinpai from './spider/video/金牌影视.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
