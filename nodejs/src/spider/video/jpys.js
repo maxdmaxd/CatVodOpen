@@ -5,8 +5,8 @@ import axios from "axios";
 
 let url = 'https://www.cfkj86.com';
 
-const crypto = require('crypto');
-const id = crypto.getRandomValues(new Uint8Array(16)).toString('hex'); // 生成一个随机的 16 位编码
+ 
+   
 
 
 async function init(inReq, _outResp) {
@@ -113,7 +113,7 @@ async function play(inReq, _outResp) {
     const html = await request(relurl, {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': id,
+    'deviceId': Math.random().toString(36).substr(2, 9),
     'sign': key,
     't': t
     })
@@ -134,7 +134,7 @@ async function search(inReq, _outResp) {
     let html = await request(`${url}/api/mw-movie/anonymous/video/searchByWordPageable?keyword=${wd}&pageNum=${pg}&pageSize=12&type=false`,{
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': id,
+    'deviceId': Math.random().toString(36).substr(2, 9),
     'sign': key,
     't': t
     });
