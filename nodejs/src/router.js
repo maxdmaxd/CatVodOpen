@@ -20,7 +20,7 @@ import wogg from './spider/video/wogg.js';
 import qupan from './spider/video/qupan.js';
 
  
-import czzy from './spider/video/czzy.js';
+ 
   
 import kkys from './spider/video/kkys.js';
 
