@@ -218,8 +218,8 @@ async function test(inReq, outResp) {
 
 export default {
     meta: {
-        key: 'jpys',
-        name: '🥇金牌影视🥇',
+        key: 'jinpai',
+        name: '金牌影视',
         type: 3,
     },
     api: async (fastify) => {
