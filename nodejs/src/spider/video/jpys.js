@@ -141,7 +141,7 @@ async function search(inReq, _outResp) {
     let videos = [];
     list.forEach((it)=>{
         videos.push({
-            vod_id: url+'/detail/'+it.vodId,
+            vod_id: '/detail/'+it.vodId,
             vod_name: it.vodName,
             vod_pic: it.vodPic
         });
