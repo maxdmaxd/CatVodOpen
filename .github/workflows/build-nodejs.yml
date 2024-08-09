@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       working-directory: nodejs
       run: |
-        npm ci
+        npm install
         npm install uuid
         
     - name: Run npm bild
