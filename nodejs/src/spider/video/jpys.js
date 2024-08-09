@@ -1,10 +1,11 @@
 import {load} from 'cheerio';
 import CryptoJS from 'crypto-js';
 import axios from "axios";
-
+import { nanoid } from 'nanoid';
+ 
 
 let url = 'https://www.cfkj86.com';
-const uniqueId = 'id5989867';
+ 
 
 async function init(inReq, _outResp) {
     return {};
@@ -110,7 +111,7 @@ async function play(inReq, _outResp) {
     const html = await request(relurl, {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': uniqueId,
+    'deviceId': nanoid();
     'sign': key,
     't': t
     })
@@ -131,7 +132,7 @@ async function search(inReq, _outResp) {
     let html = await request(`${url}/api/mw-movie/anonymous/video/searchByWordPageable?keyword=${wd}&pageNum=${pg}&pageSize=12&type=false`,{
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': uniqueId,
+    'deviceId': nanoid();
     'sign': key,
     't': t
     });
