@@ -19,13 +19,8 @@ import upyun from './spider/video/upyun.js';
 import wogg from './spider/video/wogg.js';
 import qupan from './spider/video/qupan.js';
 
- 
- 
-  
 import kkys from './spider/video/kkys.js';
-
-
- import jpys from './spider/video/jpys.js';
+import jpys from './spider/video/jpys.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
