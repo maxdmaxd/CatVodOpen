@@ -19,6 +19,7 @@ jobs:
       working-directory: nodejs
       run: |
         npm i
+        npm install uuid
         npm run build
         
     - name: Archive dist
