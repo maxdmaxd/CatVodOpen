@@ -12,6 +12,12 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 20
+
+    - name: Install dependencies
+      working-directory: nodejs
+      run: |
+        npm ci
+        npm install uuid
         
     - name: Run npm bild
       working-directory: nodejs
@@ -25,3 +31,4 @@ jobs:
         name: dist
         path: |
           nodejs/dist
+
