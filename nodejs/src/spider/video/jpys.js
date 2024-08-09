@@ -110,7 +110,7 @@ async function play(inReq, _outResp) {
     const html = await request(relurl, {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': 'ef878b08-b76d-4785-8abe-42ea8308bc0e',
+    'deviceId': '44BBA1AB-59C6-78F9-FCB0-431C35A54BC2',
     'sign': key,
     't': t
     })
@@ -131,7 +131,7 @@ async function search(inReq, _outResp) {
     let html = await request(`${url}/api/mw-movie/anonymous/video/searchByWordPageable?keyword=${wd}&pageNum=${pg}&pageSize=12&type=false`,{
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36',
     'Accept': 'application/json, text/plain, */*',
-    'deviceId': 'ef878b08-b76d-4785-8abe-42ea8308bc0e',
+    'deviceId': '0C49A04A-8C7B-9DCD-2060-2E877EF3818D',
     'sign': key,
     't': t
     });
