@@ -32,7 +32,7 @@ import ttian from './spider/video/ttian.js';
 import qkpanso from './spider/video/qkpanso.js';
  
  
-const spiders = [douban,live,bili,wogg,qupan,jpys,tudou,yingso,xxpan,ttian, push,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,qupan,tudou,yingso,xxpan,ttian, push,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
