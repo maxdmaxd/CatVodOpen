@@ -67,7 +67,7 @@ async function search(inReq, _outResp) {
 export default {
     meta: {
         key: 'mipan',
-        name: '小米盘搜',
+        name: '🍿小米夸克🍿',
         type: 3,
     },
     api: async (fastify) => {
