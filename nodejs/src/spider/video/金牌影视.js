@@ -88,7 +88,7 @@ async function detail(inReq, _outResp) {
         const a = $(it).find('a')[0]
         temp.push(a.children[0].data+'$'+a.attribs.href)
     }
-    playFroms.push('金牌影视');
+    playFroms.push('jinpai');
     
     playUrls.push(temp.join('#'));
     vod.vod_play_from = playFroms.join('$$$');
