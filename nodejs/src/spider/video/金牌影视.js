@@ -88,8 +88,8 @@ async function detail(inReq, _outResp) {
         const a = $(it).find('a')[0]
         temp.push(a.children[0].data+'$'+a.attribs.href)
     }
-    playFroms.push('金牌默认线路');
-    vod.vod_name='本网站域名爬梯无法访问!'
+    playFroms.push('金牌影视');
+    
     playUrls.push(temp.join('#'));
     vod.vod_play_from = playFroms.join('$$$');
     vod.vod_play_url = playUrls.join('$$$');
