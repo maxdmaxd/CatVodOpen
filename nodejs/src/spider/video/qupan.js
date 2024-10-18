@@ -4,7 +4,7 @@ import {ua, init, detail0, proxy, play, test, isEmpty}from '../../util/pan.js';
 import CryptoJS from 'crypto-js';
 import dayjs from 'dayjs';
 
-let url = 'https://v.funletu.com';
+let url = 'https://pan.funletu.com';
 
 async function request(reqUrl, data) {
     let res = await req(reqUrl, {
