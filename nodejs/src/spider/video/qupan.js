@@ -4,7 +4,7 @@ import {ua, init, detail0, proxy, play, test, isEmpty}from '../../util/pan.js';
 import CryptoJS from 'crypto-js';
 import dayjs from 'dayjs';
 
-let url = 'https://pan.funletu.com';
+let url = 'https://pan.funletu.com/#';
 
 async function request(reqUrl, data) {
     let res = await req(reqUrl, {
@@ -57,7 +57,7 @@ async function parseHtmlList(pg, wd) {
         },
         "message": "请求资源列表数据"
     }
-    const resp = await request(url + '/search', params);
+    const resp = await request(url + '/s', params);
     const items = resp.data;
     const videos = [];
     for (const item of items) {
