@@ -25,7 +25,7 @@ import qkpanso from './spider/video/qkpanso.js';
 
  import mipan from './spider/video/mipan.js';
  
-const spiders = [douban,live,bili,wogg,qupan,mipan,jinpai,kkys,push,copymanga,laobaigs,bengou,baozimh,bookan];
+const spiders = [douban,live,bili,wogg,mipan,jinpai,push,copymanga,laobaigs,bengou,baozimh,bookan];
 const spiderPrefix = '/spider';
 
 /**
